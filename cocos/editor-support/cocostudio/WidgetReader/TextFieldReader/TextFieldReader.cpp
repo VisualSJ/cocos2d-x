@@ -3,6 +3,7 @@
 #include "editor-support/cocostudio/WidgetReader/TextFieldReader/TextFieldReader.h"
 
 #include "ui/UITextField.h"
+#include "platform/CCFileUtils.h"
 #include "editor-support/cocostudio/CocoLoader.h"
 #include "editor-support/cocostudio/CSParseBinary_generated.h"
 #include "editor-support/cocostudio/LocalizationManager.h"
@@ -272,7 +273,6 @@ namespace cocostudio
                                               builder->CreateString(fontName),
                                               fontSize,
                                               builder->CreateString(text),
-                                              isLocalized,
                                               builder->CreateString(placeHolder),
                                               passwordEnabled,
                                               builder->CreateString(passwordStyleText),
@@ -280,8 +280,8 @@ namespace cocostudio
                                               maxLength,
                                               areaWidth,
                                               areaHeight,
-                                              isCustomSize
-                                              );
+                                              isCustomSize,
+                                              isLocalized);
         
         return *(Offset<Table>*)(&options);
     }

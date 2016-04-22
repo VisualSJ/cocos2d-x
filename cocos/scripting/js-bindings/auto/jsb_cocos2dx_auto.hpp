@@ -449,6 +449,7 @@ bool js_cocos2dx_Action_getTag(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Action_setTarget(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Action_isDone(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Action_reverse(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_cocos2dx_Action_Action(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_cocos2d_FiniteTimeAction_class;
 extern JSObject *jsb_cocos2d_FiniteTimeAction_prototype;
@@ -484,8 +485,10 @@ void js_register_cocos2dx_Follow(JSContext *cx, JS::HandleObject global);
 void register_all_cocos2dx(JSContext* cx, JS::HandleObject obj);
 bool js_cocos2dx_Follow_setBoundarySet(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Follow_initWithTarget(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_cocos2dx_Follow_initWithTargetAndOffset(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Follow_isBoundarySet(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Follow_create(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_cocos2dx_Follow_createWithOffset(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_Follow_Follow(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_cocos2d_Image_class;
@@ -3897,6 +3900,8 @@ bool js_cocos2dx_TextFieldTTF_setCursorEnabled(JSContext *cx, uint32_t argc, jsv
 bool js_cocos2dx_TextFieldTTF_getColorSpaceHolder(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_TextFieldTTF_initWithPlaceHolder(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_TextFieldTTF_appendString(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_cocos2dx_TextFieldTTF_getPasswordTextStyle(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_cocos2dx_TextFieldTTF_setPasswordTextStyle(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_TextFieldTTF_setColorSpaceHolder(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_TextFieldTTF_detachWithIME(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_cocos2dx_TextFieldTTF_setPlaceHolder(JSContext *cx, uint32_t argc, jsval *vp);

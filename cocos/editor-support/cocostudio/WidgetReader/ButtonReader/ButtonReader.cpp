@@ -3,6 +3,9 @@
 #include "editor-support/cocostudio/WidgetReader/ButtonReader/ButtonReader.h"
 
 #include "ui/UIButton.h"
+#include "2d/CCSpriteFrameCache.h"
+#include "2d/CCLabel.h"
+#include "platform/CCFileUtils.h"
 #include "editor-support/cocostudio/CocoLoader.h"
 #include "editor-support/cocostudio/CSParseBinary_generated.h"
 #include "editor-support/cocostudio/FlatBuffersSerialize.h"
@@ -630,7 +633,6 @@ namespace cocostudio
                                                               builder->CreateString(fontResourcePlistFile),
                                                               fontResourceResourceType),
                                            builder->CreateString(text),
-                                           isLocalized,
                                            builder->CreateString(fontName),
                                            fontSize,
                                            &f_textColor,
@@ -645,7 +647,8 @@ namespace cocostudio
                                            &f_shadowColor,
                                            shadowOffset.width,
                                            shadowOffset.height,
-                                           shadowBlurRadius);
+                                           shadowBlurRadius,
+                                           isLocalized);
         
         return *(Offset<Table>*)(&options);
     }
