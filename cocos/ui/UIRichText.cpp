@@ -1483,7 +1483,7 @@ static int getPrevWord(const std::string& text, int idx)
 
 static bool isWrappable(const std::string& text)
 {
-    for (int i=0; i<text.length(); ++i)
+    for (size_t i = 0; i < text.length(); ++i)
     {
         if (!std::isalnum(text[i], std::locale()))
             return true;
@@ -1570,7 +1570,7 @@ int RichText::findSplitPositionForChar(cocos2d::Label* label, const std::string&
                 leftLength--;
                 break;
             }
-            else if (stringLength <= leftLength) {
+            else if (static_cast<int>(stringLength) <= leftLength) {
                 break;
             }
         }
